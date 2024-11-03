@@ -1,6 +1,5 @@
 import requests
 import argparse
-from datetime import datetime
 from bs4 import BeautifulSoup
 
 
@@ -46,18 +45,6 @@ turn_off_data = {
     '_confirmDirstart': 'OFF',
     '_lock': 'OFF',
 }
-
-def generate_date() -> str:
-    """Generate the current date in YYYY-MM-DD format."""
-    current_date = datetime.now().strftime('%Y-%m-%d')
-    print("Generated date:", current_date)
-    return current_date
-
-def generate_time() -> str:
-    """Generate the current time in HH:MM:SS format."""
-    current_time = datetime.now().strftime('%H:%M:%S')
-    print("Generated time:", current_time)
-    return current_time
 
 def login(session: requests.Session, headers, data: dict) -> requests.Response:
     """Logs in and returns with a session and returns the response"""
